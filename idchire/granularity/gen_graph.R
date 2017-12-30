@@ -5,7 +5,12 @@ library(reshape)
 
 datafile = commandArgs(TRUE)[1]
 wholeframe = read.table(datafile, header=TRUE)
-#wholeframe = subset(wholeframe, Size == "16384")
+frame_8k_64 = subset(wholeframe, Size == "8192")
+frame_8k_64 = subset(frame_8k_64, Threads == "64")
+frame_8k_128 = subset(wholeframe, Size == "8192")
+frame_8k_128 = subset(frame_8k_128, Threads == "128")
+frame_16k_64 = subset(wholeframe, Size == "16384")
+frame_16k_64 = subset(frame_16k_64, Threads == "64")
 #wholeframe = subset(wholeframe, Blocksize == "512")
 #wholeframe = subset(wholeframe, Placement == "contiguous")
 #wholeframe = subset(wholeframe, Numactl == "all")
@@ -20,22 +25,42 @@ pd = position_dodge(width=.1)
 
 
 
-pdf(paste("graph_", datafile, ".pdf", sep = ''), width = 10, height=6)
-#myplot = ggplot(data=melted, aes(x=variable, y=GFlops, fill=factor(value)))
-#myplot = myplot + geom_bar(stat="identity", position="dodge")
-#myplot = myplot + facet_grid(~Progname)
+pdf(paste("graph_", datafile, "_8k_64.pdf", sep = ''), width = 10, height=6)
 
 
-
-
-
-
-myplot = ggplot(wholeframe, aes(x=Blocksize, y = Gflops))
+myplot = ggplot(frame_8k_64, aes(x=Blocksize, y = Gflops))
 myplot = myplot + geom_line(aes(x=Blocksize, y = Gflops, color=Runtime, group=Runtime))
 myplot = myplot + geom_errorbar(position=position_dodge(0.9), aes(color=Runtime, ymin=Gflops-(2*Stddev/Iterations), ymax=Gflops+(2*Stddev/Iterations), width=.1))
 myplot = myplot + ylab("Performance (Gflops)")
 myplot = myplot + xlab("Taille de bloc")
 myplot = myplot + ggtitle("Performances de Cholesky sur 64 threads, N=8192")
+print(myplot)
+dev.off()
+
+
+pdf(paste("graph_", datafile, "_8k_128.pdf", sep = ''), width = 10, height=6)
+
+
+myplot = ggplot(frame_8k_128, aes(x=Blocksize, y = Gflops))
+myplot = myplot + geom_line(aes(x=Blocksize, y = Gflops, color=Runtime, group=Runtime))
+myplot = myplot + geom_errorbar(position=position_dodge(0.9), aes(color=Runtime, ymin=Gflops-(2*Stddev/Iterations), ymax=Gflops+(2*Stddev/Iterations), width=.1))
+myplot = myplot + ylab("Performance (Gflops)")
+myplot = myplot + xlab("Taille de bloc")
+myplot = myplot + ggtitle("Performances de Cholesky sur 128 threads, N=8192")
+print(myplot)
+dev.off()
+
+pdf(paste("graph_", datafile, "_16k_64.pdf", sep = ''), width = 10, height=6)
+
+
+myplot = ggplot(frame_16k_64, aes(x=Blocksize, y = Gflops))
+myplot = myplot + geom_line(aes(x=Blocksize, y = Gflops, color=Runtime, group=Runtime))
+myplot = myplot + geom_errorbar(position=position_dodge(0.9), aes(color=Runtime, ymin=Gflops-(2*Stddev/Iterations), ymax=Gflops+(2*Stddev/Iterations), width=.1))
+myplot = myplot + ylab("Performance (Gflops)")
+myplot = myplot + xlab("Taille de bloc")
+myplot = myplot + ggtitle("Performances de Cholesky sur 64 threads, N=16384")
+print(myplot)
+dev.off()
 
 
 
@@ -44,6 +69,4 @@ myplot = myplot + ggtitle("Performances de Cholesky sur 64 threads, N=8192")
 #myplot = myplot + guides(col = guide_legend(ncol=3))
 #myplot = myplot + theme(legend.text = element_text(size=8), legend.title = element_text(size=8), legend.position="bottom")
 #myplot = myplot + ggtitle("Performance of OpenMP Runtimes")
-print(myplot)
-dev.off()
 
