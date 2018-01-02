@@ -25,7 +25,7 @@ pd = position_dodge(width=.1)
 
 
 
-pdf(paste("graph_", datafile, "_8k_64.pdf", sep = ''), width = 10, height=6)
+pdf(paste("graph_granularity_8k_64.pdf", sep = ''), width = 10, height=6)
 
 
 myplot = ggplot(frame_8k_64, aes(x=Blocksize, y = Gflops))
@@ -33,12 +33,14 @@ myplot = myplot + geom_line(aes(x=Blocksize, y = Gflops, color=Runtime, group=Ru
 myplot = myplot + geom_errorbar(position=position_dodge(0.9), aes(color=Runtime, ymin=Gflops-(2*Stddev/Iterations), ymax=Gflops+(2*Stddev/Iterations), width=.1))
 myplot = myplot + ylab("Performance (Gflops)")
 myplot = myplot + xlab("Taille de bloc")
-myplot = myplot + ggtitle("Performances de Cholesky sur 64 threads, N=8192")
+#myplot = myplot + ggtitle("Performances de Cholesky sur 64 threads, N=8192")
+myplot = myplot + theme(legend.position=c(.90, .25), text = element_text(size=16))
+myplot = myplot + scale_colour_discrete(name="Support exécutif")
 print(myplot)
 dev.off()
 
 
-pdf(paste("graph_", datafile, "_8k_128.pdf", sep = ''), width = 10, height=6)
+pdf(paste("graph_granularity_8k_128.pdf", sep = ''), width = 10, height=6)
 
 
 myplot = ggplot(frame_8k_128, aes(x=Blocksize, y = Gflops))
@@ -46,11 +48,13 @@ myplot = myplot + geom_line(aes(x=Blocksize, y = Gflops, color=Runtime, group=Ru
 myplot = myplot + geom_errorbar(position=position_dodge(0.9), aes(color=Runtime, ymin=Gflops-(2*Stddev/Iterations), ymax=Gflops+(2*Stddev/Iterations), width=.1))
 myplot = myplot + ylab("Performance (Gflops)")
 myplot = myplot + xlab("Taille de bloc")
-myplot = myplot + ggtitle("Performances de Cholesky sur 128 threads, N=8192")
+#myplot = myplot + ggtitle("Performances de Cholesky sur 128 threads, N=8192")
+myplot = myplot + theme(legend.position=c(.90, .25), text = element_text(size=16))
+myplot = myplot + scale_colour_discrete(name="Support exécutif")
 print(myplot)
 dev.off()
 
-pdf(paste("graph_", datafile, "_16k_64.pdf", sep = ''), width = 10, height=6)
+pdf(paste("graph_granularity_16k_64.pdf", sep = ''), width = 10, height=6)
 
 
 myplot = ggplot(frame_16k_64, aes(x=Blocksize, y = Gflops))
@@ -58,7 +62,9 @@ myplot = myplot + geom_line(aes(x=Blocksize, y = Gflops, color=Runtime, group=Ru
 myplot = myplot + geom_errorbar(position=position_dodge(0.9), aes(color=Runtime, ymin=Gflops-(2*Stddev/Iterations), ymax=Gflops+(2*Stddev/Iterations), width=.1))
 myplot = myplot + ylab("Performance (Gflops)")
 myplot = myplot + xlab("Taille de bloc")
-myplot = myplot + ggtitle("Performances de Cholesky sur 64 threads, N=16384")
+#myplot = myplot + ggtitle("Performances de Cholesky sur 64 threads, N=16384")
+myplot = myplot + theme(legend.position=c(.90, .25), text = element_text(size=16))
+myplot = myplot + scale_colour_discrete(name="Support exécutif")
 print(myplot)
 dev.off()
 
