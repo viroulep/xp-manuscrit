@@ -19,7 +19,7 @@ myplot=ggplot(df_bandwidth, aes(node_source, node_dest))
 myplot=myplot+ geom_tile(aes(fill = heat), colour="white")
 myplot=myplot+ylab("Noeud cible")
 myplot=myplot+xlab("Noeud source")
-myplot=myplot+ggtitle("Carte de la bande passante sur idchire (memcpy)")
+#myplot=myplot+ggtitle("Carte de la bande passante sur idchire (memcpy)")
 myplot=myplot+scale_fill_gradient(name="Bande passante (Go/s)", low = "grey90", high = "steelblue")
 #myplot=myplot+theme(plot.title = element_text(hjust = 0.5),
                     #legend.position=c(.9,.4)
