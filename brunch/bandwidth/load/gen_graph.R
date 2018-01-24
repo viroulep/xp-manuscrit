@@ -19,7 +19,7 @@ sum_bandwidth
 #Graph for distribution
 
 
-pdf("link_saturation.pdf", width = 10, height=6)
+pdf("link_saturation_brunch.pdf", width = 10, height=6)
 
 
 myplot = ggplot(sum_bandwidth, aes(x=total_cores, y = full_bandwidth, colour=Dest))
