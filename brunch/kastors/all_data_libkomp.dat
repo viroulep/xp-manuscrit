@@ -117,19 +117,93 @@ dpotrf_taskdep 16384 256 5 48 958.685853 1516819396878133824 1516819398408063740
 ##Progname Size Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
 dpotrf_taskdep 32768 512 5 48 1043.893922 1516819487256642376 1516819498512039079 1.202632
 #Experience summarry : avg : 1043.893922 :: std : 1.202632 :: min : 1042.047724 :: max : 1045.189676 :: median : 1044.295272
+#Output follows this header :
+##Progname Size Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
+dpotrf_taskdep 8192 256 5 56 898.109284 1516903413458463153 1516903413662589178 12.200709
+#Experience summarry : avg : 898.109284 :: std : 12.200709 :: min : 883.235671 :: max : 918.245437 :: median : 897.904238
 
 #Output follows this header :
 ##Progname Size Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
-dpotrf_taskdep 8192 256 5 56 896.779702 1516819856223962414 1516819856425110521 8.111401
-#Experience summarry : avg : 896.779702 :: std : 8.111401 :: min : 889.894660 :: max : 911.198127 :: median : 892.725142
+dpotrf_taskdep 16384 256 5 56 1104.294064 1516903447403619642 1516903448742650589 5.264407
+#Experience summarry : avg : 1104.294064 :: std : 5.264407 :: min : 1094.933385 :: max : 1109.807280 :: median : 1106.026333
 
 #Output follows this header :
 ##Progname Size Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
-dpotrf_taskdep 16384 256 5 56 1108.204497 1516819890235380789 1516819891561225314 4.632696
-#Experience summarry : avg : 1108.204497 :: std : 4.632696 :: min : 1102.020390 :: max : 1115.208998 :: median : 1106.423732
+dpotrf_taskdep 32768 512 5 56 1210.431026 1516903529660426944 1516903539355682197 1.456067
+#Experience summarry : avg : 1210.431026 :: std : 1.456067 :: min : 1208.265621 :: max : 1212.576031 :: median : 1210.259981
 
 #Output follows this header :
 ##Progname Size Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
-dpotrf_taskdep 32768 512 5 56 1209.137797 1516819972418713230 1516819982124927717 1.372283
-#Experience summarry : avg : 1209.137797 :: std : 1.372283 :: min : 1207.381397 :: max : 1211.310424 :: median : 1208.625707
+dpotrf_taskdep 8192 256 5 64 960.552315 1516903875657320519 1516903875847513526 13.106397
+#Experience summarry : avg : 960.552315 :: std : 13.106397 :: min : 939.974200 :: max : 974.606616 :: median : 963.677079
+
+#Output follows this header :
+##Progname Size Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
+dpotrf_taskdep 16384 256 5 64 1251.544112 1516903908884206134 1516903910062602064 4.402608
+#Experience summarry : avg : 1251.544112 :: std : 4.402608 :: min : 1244.191037 :: max : 1257.614614 :: median : 1252.198947
+
+#Output follows this header :
+##Progname Size Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
+dpotrf_taskdep 32768 512 5 64 1368.803517 1516903985559652238 1516903994099373858 3.133796
+#Experience summarry : avg : 1368.803517 :: std : 3.133796 :: min : 1363.607984 :: max : 1373.424173 :: median : 1368.738319
+
+#Output follows this header :
+##Progname Size Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
+dpotrf_taskdep 8192 256 5 4 81.327333 1516904325913209773 1516904328167402617 0.032058
+#Experience summarry : avg : 81.327333 :: std : 0.032058 :: min : 81.278984 :: max : 81.368041 :: median : 81.325510
+
+#Output follows this header :
+##Progname Size Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
+dpotrf_taskdep 16384 256 5 4 82.998977 1516904446730460028 1516904464394161614 0.013517
+#Experience summarry : avg : 82.998977 :: std : 0.013517 :: min : 82.979888 :: max : 83.015835 :: median : 83.003536
+
+#Output follows this header :
+##Progname Size Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
+dpotrf_taskdep 32768 512 5 4 89.327377 1516905165389472443 1516905296727496371 0.023927
+#Experience summarry : avg : 89.327377 :: std : 0.023927 :: min : 89.301335 :: max : 89.366723 :: median : 89.316996
+
+#Output follows this header :
+##Progname Size Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
+dpotrf_taskdep 8192 256 5 8 160.717919 1516907360475534510 1516907361617518699 0.513679
+#Experience summarry : avg : 160.717919 :: std : 0.513679 :: min : 159.815337 :: max : 161.244668 :: median : 160.998054
+
+#Output follows this header :
+##Progname Size Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
+dpotrf_taskdep 16384 256 5 8 165.395720 1516907434048854056 1516907442924046218 0.108606
+#Experience summarry : avg : 165.395720 :: std : 0.108606 :: min : 165.196392 :: max : 165.516249 :: median : 165.439285
+
+#Output follows this header :
+##Progname Size Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
+dpotrf_taskdep 32768 512 5 8 178.363478 1516907808255517192 1516907873991059462 0.075584
+#Experience summarry : avg : 178.363478 :: std : 0.075584 :: min : 178.226844 :: max : 178.439689 :: median : 178.382800
+
+#Output follows this header :
+##Progname Size Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
+dpotrf_taskdep 8192 256 5 12 238.708524 1516909002774629890 1516909003540736548 0.635166
+#Experience summarry : avg : 238.708524 :: std : 0.635166 :: min : 237.982123 :: max : 239.662196 :: median : 238.376403
+
+#Output follows this header :
+##Progname Size Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
+dpotrf_taskdep 16384 256 5 12 247.322400 1516909060666094535 1516909066594316675 0.212992
+#Experience summarry : avg : 247.322400 :: std : 0.212992 :: min : 246.925780 :: max : 247.554424 :: median : 247.382965
+
+#Output follows this header :
+##Progname Size Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
+dpotrf_taskdep 32768 512 5 12 267.165105 1516909320182852464 1516909364103183933 0.068832
+#Experience summarry : avg : 267.165105 :: std : 0.068832 :: min : 267.043995 :: max : 267.231519 :: median : 267.192878
+
+#Output follows this header :
+##Progname Size Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
+dpotrf_taskdep 8192 256 5 16 315.034333 1516910182289742505 1516910182869900534 0.699970
+#Experience summarry : avg : 315.034333 :: std : 0.699970 :: min : 313.905836 :: max : 315.922893 :: median : 315.074017
+
+#Output follows this header :
+##Progname Size Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
+dpotrf_taskdep 16384 256 5 16 329.307253 1516910232469016139 1516910236923610672 0.201825
+#Experience summarry : avg : 329.307253 :: std : 0.201825 :: min : 329.120024 :: max : 329.586712 :: median : 329.180841
+
+#Output follows this header :
+##Progname Size Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
+dpotrf_taskdep 32768 512 5 16 355.521822 1516910435838184824 1516910468827717176 0.177944
+#Experience summarry : avg : 355.521822 :: std : 0.177944 :: min : 355.208880 :: max : 355.752849 :: median : 355.526744
 
