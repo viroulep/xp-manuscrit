@@ -208,3 +208,18 @@ dgeqrf_taskdep 16384 256 128 5 16 247.166360 1516953670294634549 151695369402487
 dgeqrf_taskdep 32768 512 128 5 16 290.295043 1516954536115124680 1516954697733574590 0.041576
 #Experience summarry : avg : 290.295043 :: std : 0.041576 :: min : 290.234683 :: max : 290.353958 :: median : 290.280248
 
+#Output follows this header :
+##Progname Size Blocksize Internal_Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
+dgeqrf_taskdep 49152 512 256 5 96 1348.805932 1517158738814352992 1517158855902381655 3.731527
+#Experience summarry : avg : 1348.805932 :: std : 3.731527 :: min : 1345.597909 :: max : 1354.334335 :: median : 1346.073017
+
+#Output follows this header :
+##Progname Size Blocksize Internal_Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
+dgeqrf_taskdep 65536 512 256 5 96 1379.064219 1517160272713957944 1517160544871750740 1.253390
+#Experience summarry : avg : 1379.064219 :: std : 1.253390 :: min : 1377.514846 :: max : 1381.098602 :: median : 1379.010887
+
+#Output follows this header :
+##Progname Size Blocksize Internal_Blocksize Iterations Threads Gflops(Mean) startTime endTime Stddev
+dgeqrf_taskdep 65536 512 512 5 96 1285.835341 1517162061533899508 1517162353647022388 0.542985
+#Experience summarry : avg : 1285.835341 :: std : 0.542985 :: min : 1284.805528 :: max : 1286.332144 :: median : 1286.102664
+
