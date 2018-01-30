@@ -4,7 +4,6 @@ library(lattice)
 library(reshape)
 
 wholeframe = read.table("./all_data.dat", header=TRUE)
-wholeframe = subset(wholeframe, (size == 8192 | size == 32768) & program == "dpotrf_taskdep")
 
 pd = position_dodge(width=.1)
 #melted = melt(framsum, id.vars=c("GFlops", "Progname", "WSselect", "WSpush", "Runtime", "Threads", "Std", "Nxp"))
@@ -16,7 +15,8 @@ pd = position_dodge(width=.1)
 pdf(paste("graph_all_cholesky_idchire.pdf", sep = ''), width = 10, height=6)
 
 
-myplot = ggplot(wholeframe, aes(x=threads, y = gflops))
+frame_all_cholesky = subset(wholeframe, (size == 8192 | size == 32768) & program == "dpotrf_taskdep")
+myplot = ggplot(frame_all_cholesky, aes(x=threads, y = gflops))
 myplot = myplot + geom_line(aes(color=runtime, group=interaction(size, runtime)))
 myplot = myplot + geom_point(aes(shape=factor(size), color=runtime, group=interaction(size, runtime)))
 myplot = myplot + guides(colour = guide_legend(override.aes = list(shape = NA)))
@@ -32,3 +32,16 @@ myplot = myplot + scale_shape_manual(name="Taille de matrice", values=c(4, 19))
 print(myplot)
 dev.off()
 
+
+frame_comp_threads=subset(wholeframe, size == 32768)
+
+pdf(paste("graph_qr_cholesky_vs_threads.pdf", sep = ''), width = 10, height=6)
+
+myplot = ggplot(frame_comp_threads, aes(x=threads, y = gflops))
+myplot = myplot + geom_line(aes(color=runtime))
+#myplot = myplot + geom_errorbar(position=position_dodge(0.9), aes(color=interaction(WSselect, WSpush, Taskprio), ymin=GFlops-(2*Std/Nxp), ymax=GFlops+(2*Std/Nxp), width=.1))
+myplot = myplot + facet_grid(~program, scales="free_y")
+myplot = myplot + geom_point(size=2,aes(shape=runtime))
+
+print(myplot)
+dev.off()
