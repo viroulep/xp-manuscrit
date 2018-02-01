@@ -37,11 +37,17 @@ frame_comp_threads=subset(wholeframe, size == 32768)
 
 pdf(paste("graph_qr_cholesky_vs_threads.pdf", sep = ''), width = 10, height=6)
 
+levels(frame_comp_threads$program) <- c("QR", "Cholesky")
+
 myplot = ggplot(frame_comp_threads, aes(x=threads, y = gflops))
 myplot = myplot + geom_line(aes(color=runtime))
 #myplot = myplot + geom_errorbar(position=position_dodge(0.9), aes(color=interaction(WSselect, WSpush, Taskprio), ymin=GFlops-(2*Std/Nxp), ymax=GFlops+(2*Std/Nxp), width=.1))
 myplot = myplot + facet_grid(~program, scales="free_y")
-myplot = myplot + geom_point(size=2,aes(shape=runtime))
+myplot = myplot + geom_point(size=2,aes(color=runtime), shape=19)
+myplot = myplot + theme(legend.position=c(.85, .20), text = element_text(size=16))
+myplot = myplot + scale_colour_discrete(name="Support exécutif", labels=c("libOMP", "libGOMP", "libKOMP-Affinity"))
+myplot = myplot + ylab("Performance (Gflops)")
+myplot = myplot + xlab("Nombre de threads")
 
 print(myplot)
 dev.off()
