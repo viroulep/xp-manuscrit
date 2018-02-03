@@ -1,0 +1,105 @@
+library(ggplot2)
+
+df = read.table("./all_data_simulateur.dat", header=TRUE)
+df_8k = subset(df, size==8192)
+df = subset(df, size==32768)
+df_runtime = read.table("../kastors/all_data.dat", header=TRUE)
+df_runtime_8k = subset(df_runtime, size == 8192 & blocksize == 256 & program == "dpotrf_taskdep")
+df_runtime = subset(df_runtime, size == 32768 & blocksize == 512 & program == "dpotrf_taskdep")
+
+pdf("simu_min_max_affinity_idchire.pdf", width = 10, height=6)
+
+df_simu_min = subset(df, (model == "IdchireMin" & strat == "RandLoc")
+                     | (model == "IdchireMax" & strat == "RandLoc")
+                     | model == "IdchireAffinity")
+
+myplot = ggplot(df_simu_min, aes(x=threads, y = gflops))
+myplot = myplot + geom_point(aes(colour=model, shape=strat, group=interaction(model,strat)))
+myplot = myplot + geom_line(aes(colour=model, group=interaction(model, strat)))
+myplot = myplot + guides(colour = guide_legend(override.aes = list(shape = NA)))
+#myplot = myplot + expand_limits(y=0)
+myplot = myplot + theme(legend.position=c(0.75, 0.25), text = element_text(size=16))
+myplot = myplot + scale_colour_discrete(name="Modèle", labels=c("Affinity", "Maximum", "Minimum"))
+myplot = myplot + scale_shape_manual(name="Stratégie de vol", values=c(19, 4))
+#myplot = myplot + ggtitle("P d'un Cholesky (N=32768, BS=512) en fonction du modèle et strat.")
+myplot = myplot + ylab("Performance (GFlops)")
+myplot = myplot + xlab("Nombre de threads")
+
+print(myplot)
+dev.off()
+
+pdf("simu_affinity_runtime_idchire.pdf", width = 10, height=6)
+
+df_affinity = subset(df, (model == "IdchireAffinity" & strat == "Affinity")
+                     | (model == "IdchireMin" & strat == "RandLoc"))
+
+myplot = ggplot(df_affinity, aes(x=threads, y = gflops))
+#myplot = myplot + geom_point(aes(colour=model, shape=strat, group=interaction(model,strat)))
+myplot = myplot + geom_line(aes(colour=model, group=interaction(model, strat)))
+myplot = myplot + geom_line(data=subset(df_runtime, runtime=="clang" | runtime=="libkomp"), aes(colour=runtime))
+myplot = myplot + guides(colour = guide_legend(override.aes = list(shape = NA)))
+#myplot = myplot + expand_limits(y=0)
+myplot = myplot + theme(legend.position=c(0.75, 0.25), text = element_text(size=16))
+myplot = myplot + scale_colour_discrete(name="Modèle ou support exécutif", labels=c("libOMP", "Affinity", "Minimum", "libKOMP"))
+#myplot = myplot + scale_shape_manual(name="Stratégie de vol", values=c(19, 4))
+#myplot = myplot + ggtitle("P d'un Cholesky (N=32768, BS=512) en fonction du modèle et strat.")
+myplot = myplot + ylab("Performance (GFlops)")
+myplot = myplot + xlab("Nombre de threads")
+
+print(myplot)
+dev.off()
+
+pdf("simu_affinity_avg_runtime_idchire.pdf", width = 10, height=6)
+
+df_affinity_avg = subset(df, (model == "IdchireAffinityAVG"))
+
+myplot = ggplot(df_affinity_avg, aes(x=threads, y = gflops))
+#myplot = myplot + geom_point(aes(colour=model, shape=strat, group=interaction(model,strat)))
+myplot = myplot + geom_line(aes(colour=interaction(model, strat), group=interaction(model, strat)))
+myplot = myplot + geom_line(data=subset(df_runtime, runtime=="clang" | runtime=="libkomp"), aes(colour=runtime))
+myplot = myplot + guides(colour = guide_legend(override.aes = list(shape = NA)))
+#myplot = myplot + expand_limits(y=0)
+myplot = myplot + theme(legend.position=c(0.75, 0.25), text = element_text(size=16))
+myplot = myplot + scale_colour_discrete(name="Modèle ou support exécutif", labels=c("libOMP", "AffinityAVG/Affinity", "AffinityAVG/RandLoc", "libKOMP"))
+#myplot = myplot + scale_shape_manual(name="Stratégie de vol", values=c(19, 4))
+#myplot = myplot + ggtitle("P d'un Cholesky (N=32768, BS=512) en fonction du modèle et strat.")
+myplot = myplot + ylab("Performance (GFlops)")
+myplot = myplot + xlab("Nombre de threads")
+
+print(myplot)
+dev.off()
+
+pdf("simu_affinity_8k_runtime_idchire.pdf", width = 10, height=6)
+
+df_affinity_avg = subset(df_8k, (model == "IdchireAffinityAVG"))
+
+myplot = ggplot(df_affinity_avg, aes(x=threads, y = gflops))
+#myplot = myplot + geom_point(aes(colour=model, shape=strat, group=interaction(model,strat)))
+myplot = myplot + geom_line(aes(colour=interaction(model, strat), group=interaction(model, strat)))
+myplot = myplot + geom_line(data=subset(df_runtime_8k, runtime=="clang" | runtime=="libkomp"), aes(colour=runtime))
+myplot = myplot + guides(colour = guide_legend(override.aes = list(shape = NA)))
+#myplot = myplot + expand_limits(y=0)
+myplot = myplot + theme(legend.position=c(0.75, 0.25), text = element_text(size=16))
+myplot = myplot + scale_colour_discrete(name="Modèle ou support exécutif", labels=c("libOMP", "AffinityAVG/Affinity", "AffinityAVG/RandLoc", "libKOMP"))
+#myplot = myplot + scale_shape_manual(name="Stratégie de vol", values=c(19, 4))
+#myplot = myplot + ggtitle("P d'un Cholesky (N=32768, BS=512) en fonction du modèle et strat.")
+myplot = myplot + ylab("Performance (GFlops)")
+myplot = myplot + xlab("Nombre de threads")
+
+print(myplot)
+dev.off()
+
+pdf("simu_all_models_idchire.pdf", width = 10, height=6)
+
+myplot = ggplot(df, aes(x=threads, y = gflops))
+myplot = myplot + geom_point(aes(colour=model, shape=strat, group=interaction(model,strat)))
+myplot = myplot + geom_line(aes(colour=model, group=interaction(model, strat)))
+myplot = myplot + geom_line(data=df_runtime, aes(colour=runtime))
+#myplot = myplot + expand_limits(y=0)
+myplot = myplot + theme(legend.position=c(0.75, 0.25), text = element_text(size=16))
+myplot = myplot + ggtitle("Perf d'un Cholesky (N=32768, BS=512) en fonction du modèle et strat.")
+myplot = myplot + ylab("Perf (Gflops)")
+myplot = myplot + xlab("Nombre de threads")
+
+print(myplot)
+dev.off()
