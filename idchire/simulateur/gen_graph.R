@@ -7,6 +7,8 @@ df_runtime = read.table("../kastors/all_data.dat", header=TRUE)
 df_runtime_8k = subset(df_runtime, size == 8192 & blocksize == 256 & program == "dpotrf_taskdep")
 df_runtime = subset(df_runtime, size == 32768 & blocksize == 512 & program == "dpotrf_taskdep")
 
+df_steals = read.table("./all_data_steal_count.dat", header=TRUE)
+
 pdf("simu_min_max_affinity_idchire.pdf", width = 10, height=6)
 
 df_simu_min = subset(df, (model == "IdchireMin" & strat == "RandLoc")
@@ -101,6 +103,25 @@ myplot = myplot + geom_line(data=df_runtime, aes(colour=runtime))
 myplot = myplot + theme(legend.position=c(0.75, 0.25), text = element_text(size=16))
 myplot = myplot + ggtitle("Perf d'un Cholesky (N=32768, BS=512) en fonction du modèle et strat.")
 myplot = myplot + ylab("Perf (Gflops)")
+myplot = myplot + xlab("Nombre de threads")
+
+print(myplot)
+dev.off()
+
+pdf("simu_steal_visits_idchire.pdf", width = 10, height=6)
+
+df_steals=subset(df_steals, strat=="Affinity")
+
+myplot = ggplot(df_steals, aes(x=threads, y = steals_per_task))
+#myplot = myplot + geom_point(aes(colour=factor(size)))
+myplot = myplot + geom_line(aes(colour=factor(size)))
+#myplot = myplot + geom_line(aes(colour=factor(size), y=visits_per_task/180))
+#myplot = myplot + geom_line(data=df_runtime, aes(colour=runtime))
+#myplot = myplot + expand_limits(y=0)
+myplot = myplot + theme(legend.position=c(0.25, 0.75), text = element_text(size=16))
+#myplot = myplot + ggtitle("Visites par tache")
+myplot = myplot + scale_colour_discrete(name="Tailles : Matrice x Bloc", labels=c("8192x256", "32768x512"))
+myplot = myplot + ylab("Requêtes de vol par tâche")
 myplot = myplot + xlab("Nombre de threads")
 
 print(myplot)
