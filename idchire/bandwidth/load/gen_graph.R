@@ -31,7 +31,7 @@ myplot = myplot + geom_line()
 #myplot = myplot + theme(legend.position="right", legend.title=element_text(size=14), legend.text=element_text(size=13), axis.text=element_text(size=12))
 myplot = myplot + theme(legend.position=c(0.85, 0.70), text = element_text(size=16))
 #myplot = myplot + ggtitle("Bande passante à partir du nœud 0")
-myplot = myplot + scale_colour_discrete(name="Noeud destination")
+myplot = myplot + scale_colour_discrete(name="Noeud source")
 myplot = myplot + ylab("Bande passante (Go/s)")
 myplot = myplot + xlab("Nombre de threads")
 

@@ -14,7 +14,7 @@ myplot = myplot + geom_errorbar(show.legend=FALSE, position=position_dodge(0.9),
 myplot = myplot + ylab("GFlops")
 myplot = myplot + theme(legend.position="right", text=element_text(size=16))
 #myplot = myplot + ggtitle("Cholesky's performances using 32K matrices depending on the data distribution\n")
-myplot = myplot + scale_fill_discrete(name="Initialisation", labels=c("Séquentielle", "Noeud unique", "Parallèle", "Numactl", "Aléatoire", "Cyclique"))
+myplot = myplot + scale_fill_discrete(name="Initialisation", labels=c("Séquentielle", "Noeud unique", "Non guidée", "Numactl", "Aléatoire", "Cyclique"))
 #myplot = myplot + scale_fill_discrete()
 myplot = myplot + scale_x_discrete(name="Support exécutif", labels=c("libOMP", "libGOMP", "libKOMP"))
 #myplot = myplot + geom_hline(aes(yintercept=framsumnumactl_gcc$GFlops), linetype="dashed")
