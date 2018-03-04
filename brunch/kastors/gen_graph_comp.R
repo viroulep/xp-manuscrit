@@ -8,7 +8,9 @@ wholeframe=subset(wholeframe, threads==96)
 
 pdf("graph_details_qr_cholesky_brunch.pdf", width = 10, height=10)
 
-levels(wholeframe$Exp) <- c("QR", "Cholesky")
+wholeframe$Exp = revalue(wholeframe$Exp, c("dpotrf_taskdep"="Cholesky", "dgeqrf_taskdep"="QR"))
+wholeframe$Exp = factor(wholeframe$Exp, levels=c("Cholesky","QR"), labels=c("Cholesky", "QR"))
+
 
 myplot = ggplot(wholeframe, aes(x=factor(size), y = gflops, fill=runtime))
 myplot = myplot + geom_bar(stat="identity", position=position_dodge())

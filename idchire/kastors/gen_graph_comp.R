@@ -7,7 +7,8 @@ wholeframe=read.table("./all_data.dat", header=TRUE)
 
 pdf("graph_details_qr_cholesky_idchire.pdf", width = 10, height=10)
 
-levels(wholeframe$program) <- c("QR", "Cholesky")
+wholeframe$program = revalue(wholeframe$program, c("dpotrf_taskdep"="Cholesky", "dgeqrf_taskdep"="QR"))
+wholeframe$program = factor(wholeframe$program, levels=c("Cholesky","QR"), labels=c("Cholesky", "QR"))
 
 myplot = ggplot(wholeframe, aes(x=factor(size), y = gflops, fill=runtime))
 myplot = myplot + geom_bar(stat="identity", position=position_dodge())
