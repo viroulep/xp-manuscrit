@@ -86,7 +86,7 @@ myplot = myplot + geom_line(data=subset(df_runtime_8k, runtime=="clang" | runtim
 myplot = myplot + guides(colour = guide_legend(override.aes = list(shape = NA)))
 #myplot = myplot + expand_limits(y=0)
 myplot = myplot + theme(legend.position=c(0.75, 0.25), text = element_text(size=16))
-myplot = myplot + scale_colour_discrete(name="Modèle ou support exécutif", labels=c("libOMP", "DeuxNiveauxAVG/Affinity", "DeuxNiveauxAVG/RandLoc", "libKOMP"))
+#myplot = myplot + scale_colour_discrete(name="Modèle ou support exécutif", labels=c("libOMP", "DeuxNiveauxAVG/Affinity", "DeuxNiveauxAVG/RandLoc", "libKOMP"))
 #myplot = myplot + scale_shape_manual(name="Stratégie de vol", values=c(19, 4))
 #myplot = myplot + ggtitle("P d'un Cholesky (N=32768, BS=512) en fonction du modèle et strat.")
 myplot = myplot + ylab("Performance (GFlops)")
