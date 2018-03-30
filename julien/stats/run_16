@@ -1,0 +1,9 @@
+[OMP-TRACE] ompt-trace ompt_tool initialized
+[OMP-TRACE] kaapi tracing version: Git last commit:5b7f1aceea447894
+#Output follows this header :
+##Progname Size Blocksize Iterations Threads Gflops(Mean) Stddev 
+dpotrf_taskdep 8192 224 5 16 219.547303 0.806487
+#Experience summarry : avg : 219.547303 :: std : 0.806487 :: min : 218.153076 :: max : 220.632110 :: median : 219.760216
+
+File: 'stat.11087' generated
+[OMP-TRACE] kaapi_ext_fini
