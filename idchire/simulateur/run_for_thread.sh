@@ -1,15 +1,16 @@
 #!/bin/bash
 
-models="IdchireAffinity IdchireAffinityMinMax IdchireMin IdchireMax"
-strategies="RandLoc Affinity"
+#models="IdchireAffinity IdchireAffinityMinMax IdchireMin IdchireMax"
+models="IdchireMin IdchireMax"
+strategies="RandLoc"
 
 nthreads=$1
 for m in $models; do
   for s in $strategies; do
-    prog="/home/pviroul/simulateur/build/Cholesky"
+    prog="/home/fifi/dev/sim-numa/build/Cholesky"
     model_data="/home/pviroul/simulateur/data/model_data.idchire.dat"
-    output="all_data_simulateur.dat"
-    cmd="$prog -w 64 -b 512 -f $model_data -m $m -s $s -t $nthreads >> $output"
+    output="all_data_tmp.dat"
+    cmd="$prog -w 32 -b 256 -m $m -s $s -t $nthreads -f /home/fifi/dev/sim-numa/data/model_data.idchire.dat | grep -v \"\#\" >> $output"
     eval $cmd
   done
 done
