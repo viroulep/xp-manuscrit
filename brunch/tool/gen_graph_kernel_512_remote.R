@@ -8,21 +8,21 @@ subset_ddply <- function(df, bs) {
   return (ddply(tmpdf, c("Exp", "Blocksize", "Access", "total_cores", "kernel"), summarize, thread_avg = mean(GFlops), Std=sd(GFlops), Nxp=length(Exp)))
 }
 
-framegemm = read.table("./summarized_all_data_dgemm_idchire.dat", header=TRUE)
+framegemm = read.table("./summarized_all_data_dgemm.dat", header=TRUE)
 avg_dgemm = subset_ddply(framegemm, 512)
+avg_dgemm_small = subset_ddply(framegemm, 256)
 
-avg_small_dgemm = subset_ddply(framegemm, 288)
-#frametrsm = read.table("./summarized_all_data_dtrsm_idchire.dat", header=TRUE)
+#frametrsm = read.table("./summarized_all_data_dtrsm.dat", header=TRUE)
 #avg_dtrsm = subset_ddply(frametrsm, 512)
 
-framepotrf = read.table("./summarized_all_data_dpotrf_idchire.dat", header=TRUE)
+framepotrf = read.table("./summarized_all_data_dpotrf.dat", header=TRUE)
 avg_dpotrf = subset_ddply(framepotrf, 512)
 
-#framesyrk = read.table("./summarized_all_data_dsyrk_idchire.dat", header=TRUE)
+#framesyrk = read.table("./summarized_all_data_dsyrk.dat", header=TRUE)
 #avg_dsyrk = subset_ddply(framesyrk, 512)
 
 combined = rbind(avg_dgemm, avg_dpotrf)
-combined_small = rbind(avg_dgemm, avg_small_dgemm)
+combined_small = rbind(avg_dgemm, avg_dgemm_small)
 
 pd = position_dodge(width=.1)
 
@@ -31,7 +31,7 @@ pd = position_dodge(width=.1)
 #Graph for distribution
 
 
-pdf("kernel_512_remote_idchire.pdf", width = 10, height=6)
+pdf("kernel_512_remote_brunch.pdf", width = 10, height=6)
 
 
 myplot = ggplot(combined, aes(x=total_cores, y = thread_avg))
@@ -52,7 +52,7 @@ myplot = myplot + labs(colour="Noyau")
 print(myplot)
 dev.off()
 
-pdf("kernel_dgemm_remote_idchire.pdf", width = 10, height=6)
+pdf("kernel_dgemm_remote_brunch.pdf", width = 10, height=6)
 
 
 myplot = ggplot(combined_small, aes(x=total_cores, y = thread_avg))
