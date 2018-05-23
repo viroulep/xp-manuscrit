@@ -1,0 +1,219 @@
+# Statistics about process 21030. Duration: 7.466252e+01(s)
+#---------- Teams' Performance Counter
+#                                            <team name>    <count> <#threads> | Work total self       
+ func: RunTest file: time_dpotrf-task.c line: 70                  4         64  3.0374e+03  3.0374e+03 
+                                                                    thread   0              4.5994e+01 
+                                                                    thread   1              4.7496e+01 
+                                                                    thread   2              4.7514e+01 
+                                                                    thread   3              4.7549e+01 
+                                                                    thread   4              4.7528e+01 
+                                                                    thread   5              4.7525e+01 
+                                                                    thread   6              4.7592e+01 
+                                                                    thread   7              4.7534e+01 
+                                                                    thread   8              4.7596e+01 
+                                                                    thread   9              4.7630e+01 
+                                                                    thread  10              4.7452e+01 
+                                                                    thread  11              4.7475e+01 
+                                                                    thread  12              4.7546e+01 
+                                                                    thread  13              4.7434e+01 
+                                                                    thread  14              4.7579e+01 
+                                                                    thread  15              4.7367e+01 
+                                                                    thread  16              4.7368e+01 
+                                                                    thread  17              4.7414e+01 
+                                                                    thread  18              4.7483e+01 
+                                                                    thread  19              4.7391e+01 
+                                                                    thread  20              4.7390e+01 
+                                                                    thread  21              4.7478e+01 
+                                                                    thread  22              4.7418e+01 
+                                                                    thread  23              4.7354e+01 
+                                                                    thread  24              4.7499e+01 
+                                                                    thread  25              4.7430e+01 
+                                                                    thread  26              4.7406e+01 
+                                                                    thread  27              4.7319e+01 
+                                                                    thread  28              4.7447e+01 
+                                                                    thread  29              4.7380e+01 
+                                                                    thread  30              4.7467e+01 
+                                                                    thread  31              4.7385e+01 
+                                                                    thread  32              4.7365e+01 
+                                                                    thread  33              4.7355e+01 
+                                                                    thread  34              4.7403e+01 
+                                                                    thread  35              4.7446e+01 
+                                                                    thread  36              4.7377e+01 
+                                                                    thread  37              4.7448e+01 
+                                                                    thread  38              4.7383e+01 
+                                                                    thread  39              4.7407e+01 
+                                                                    thread  40              4.7461e+01 
+                                                                    thread  41              4.7511e+01 
+                                                                    thread  42              4.7496e+01 
+                                                                    thread  43              4.7451e+01 
+                                                                    thread  44              4.7472e+01 
+                                                                    thread  45              4.7405e+01 
+                                                                    thread  46              4.7533e+01 
+                                                                    thread  47              4.7359e+01 
+                                                                    thread  48              4.7518e+01 
+                                                                    thread  49              4.7490e+01 
+                                                                    thread  50              4.7478e+01 
+                                                                    thread  51              4.7514e+01 
+                                                                    thread  52              4.7466e+01 
+                                                                    thread  53              4.7531e+01 
+                                                                    thread  54              4.7553e+01 
+                                                                    thread  55              4.7558e+01 
+                                                                    thread  56              4.7569e+01 
+                                                                    thread  57              4.7650e+01 
+                                                                    thread  58              4.7644e+01 
+                                                                    thread  59              4.7697e+01 
+                                                                    thread  60              4.7667e+01 
+                                                                    thread  61              4.7619e+01 
+                                                                    thread  62              4.7508e+01 
+                                                                    thread  63              4.7648e+01 
+ func: RunTest file: time_dpotrf-task.c line: 56                  4         64  3.2077e+02  3.2077e+02 
+                                                                    thread   0              3.5280e+00 
+                                                                    thread   1              4.0846e+00 
+                                                                    thread   2              4.0845e+00 
+                                                                    thread   3              4.0803e+00 
+                                                                    thread   4              4.0872e+00 
+                                                                    thread   5              4.0834e+00 
+                                                                    thread   6              4.0873e+00 
+                                                                    thread   7              4.0833e+00 
+                                                                    thread   8              2.9648e+00 
+                                                                    thread   9              2.9617e+00 
+                                                                    thread  10              2.9637e+00 
+                                                                    thread  11              2.9686e+00 
+                                                                    thread  12              2.9658e+00 
+                                                                    thread  13              2.9638e+00 
+                                                                    thread  14              2.9636e+00 
+                                                                    thread  15              2.9684e+00 
+                                                                    thread  16              5.4572e+00 
+                                                                    thread  17              5.4573e+00 
+                                                                    thread  18              5.4592e+00 
+                                                                    thread  19              5.4512e+00 
+                                                                    thread  20              5.4619e+00 
+                                                                    thread  21              5.4569e+00 
+                                                                    thread  22              5.4502e+00 
+                                                                    thread  23              5.4516e+00 
+                                                                    thread  24              5.5300e+00 
+                                                                    thread  25              5.5295e+00 
+                                                                    thread  26              5.5356e+00 
+                                                                    thread  27              5.5298e+00 
+                                                                    thread  28              5.5286e+00 
+                                                                    thread  29              5.5409e+00 
+                                                                    thread  30              5.5268e+00 
+                                                                    thread  31              5.5292e+00 
+                                                                    thread  32              5.5007e+00 
+                                                                    thread  33              5.5060e+00 
+                                                                    thread  34              5.4979e+00 
+                                                                    thread  35              5.5000e+00 
+                                                                    thread  36              5.5144e+00 
+                                                                    thread  37              5.5042e+00 
+                                                                    thread  38              5.4967e+00 
+                                                                    thread  39              5.5042e+00 
+                                                                    thread  40              5.5400e+00 
+                                                                    thread  41              5.5438e+00 
+                                                                    thread  42              5.5401e+00 
+                                                                    thread  43              5.5471e+00 
+                                                                    thread  44              5.5499e+00 
+                                                                    thread  45              5.5413e+00 
+                                                                    thread  46              5.5392e+00 
+                                                                    thread  47              5.5436e+00 
+                                                                    thread  48              5.5239e+00 
+                                                                    thread  49              5.5286e+00 
+                                                                    thread  50              5.5266e+00 
+                                                                    thread  51              5.5216e+00 
+                                                                    thread  52              5.5273e+00 
+                                                                    thread  53              5.5351e+00 
+                                                                    thread  54              5.5269e+00 
+                                                                    thread  55              5.5319e+00 
+                                                                    thread  56              5.5557e+00 
+                                                                    thread  57              5.5528e+00 
+                                                                    thread  58              5.5561e+00 
+                                                                    thread  59              5.5564e+00 
+                                                                    thread  60              5.5579e+00 
+                                                                    thread  61              5.5518e+00 
+                                                                    thread  62              5.5569e+00 
+                                                                    thread  63              5.5578e+00 
+ func: main file: main.c line: 151                                1         64  0.0000e+00  0.0000e+00 
+                                                                    thread   0              0.0000e+00 
+                                                                    thread   1              0.0000e+00 
+                                                                    thread   2              0.0000e+00 
+                                                                    thread   3              0.0000e+00 
+                                                                    thread   4              0.0000e+00 
+                                                                    thread   5              0.0000e+00 
+                                                                    thread   6              0.0000e+00 
+                                                                    thread   7              0.0000e+00 
+                                                                    thread   8              0.0000e+00 
+                                                                    thread   9              0.0000e+00 
+                                                                    thread  10              0.0000e+00 
+                                                                    thread  11              0.0000e+00 
+                                                                    thread  12              0.0000e+00 
+                                                                    thread  13              0.0000e+00 
+                                                                    thread  14              0.0000e+00 
+                                                                    thread  15              0.0000e+00 
+                                                                    thread  16              0.0000e+00 
+                                                                    thread  17              0.0000e+00 
+                                                                    thread  18              0.0000e+00 
+                                                                    thread  19              0.0000e+00 
+                                                                    thread  20              0.0000e+00 
+                                                                    thread  21              0.0000e+00 
+                                                                    thread  22              0.0000e+00 
+                                                                    thread  23              0.0000e+00 
+                                                                    thread  24              0.0000e+00 
+                                                                    thread  25              0.0000e+00 
+                                                                    thread  26              0.0000e+00 
+                                                                    thread  27              0.0000e+00 
+                                                                    thread  28              0.0000e+00 
+                                                                    thread  29              0.0000e+00 
+                                                                    thread  30              0.0000e+00 
+                                                                    thread  31              0.0000e+00 
+                                                                    thread  32              0.0000e+00 
+                                                                    thread  33              0.0000e+00 
+                                                                    thread  34              0.0000e+00 
+                                                                    thread  35              0.0000e+00 
+                                                                    thread  36              0.0000e+00 
+                                                                    thread  37              0.0000e+00 
+                                                                    thread  38              0.0000e+00 
+                                                                    thread  39              0.0000e+00 
+                                                                    thread  40              0.0000e+00 
+                                                                    thread  41              0.0000e+00 
+                                                                    thread  42              0.0000e+00 
+                                                                    thread  43              0.0000e+00 
+                                                                    thread  44              0.0000e+00 
+                                                                    thread  45              0.0000e+00 
+                                                                    thread  46              0.0000e+00 
+                                                                    thread  47              0.0000e+00 
+                                                                    thread  48              0.0000e+00 
+                                                                    thread  49              0.0000e+00 
+                                                                    thread  50              0.0000e+00 
+                                                                    thread  51              0.0000e+00 
+                                                                    thread  52              0.0000e+00 
+                                                                    thread  53              0.0000e+00 
+                                                                    thread  54              0.0000e+00 
+                                                                    thread  55              0.0000e+00 
+                                                                    thread  56              0.0000e+00 
+                                                                    thread  57              0.0000e+00 
+                                                                    thread  58              0.0000e+00 
+                                                                    thread  59              0.0000e+00 
+                                                                    thread  60              0.0000e+00 
+                                                                    thread  61              0.0000e+00 
+                                                                    thread  62              0.0000e+00 
+                                                                    thread  63              0.0000e+00 
+
+# --------------- Explicit task
+#                                            <task name>    <count>   Work (sum/avrg/sd)                    
+ ;../../plasma/src/pdplgsy.c;plasma_pdplgsy_quark;41;9;;      16384   3.2067e+02   1.9572e-02         -nan 
+ ;../../plasma/src/pdpotrf.c;plasma_pdpotrf_quark;54;9;;        256   1.2504e+00   4.8843e-03   1.4992e-04 
+ ;../../plasma/src/pdpotrf.c;plasma_pdpotrf_quark;63;9;;       8064   9.7155e+01   1.2048e-02   6.7673e-05 
+ ;../../plasma/src/pdpotrf.c;plasma_pdpotrf_quark;90;9;;     166656   2.8593e+03   1.7157e-02         -nan 
+ ;../../plasma/src/pdpotrf.c;plasma_pdpotrf_quark;77;9;;       8064   7.8795e+01   9.7712e-03   2.6048e-05 
+                                               Sub total     199424   3.3572e+03   1.6834e-02              
+
+# --------------- Implicit task
+#                                            <task name>    <count>   Work (sum/avrg/sd)                    
+ func: main file: main.c line: 151                               64   0.0000e+00   0.0000e+00   0.0000e+00 
+ func: RunTest file: time_dpotrf-task.c line: 56                256   2.1853e-04   8.5363e-07   1.0605e-07 
+ func: RunTest file: time_dpotrf-task.c line: 70                256   7.6131e-04   2.9739e-06   1.1148e-06 
+                                               Sub total        576   9.7984e-04   1.7011e-06              
+
+
+                                                   Total     200000   3.3572e+03   1.6786e-02              
+
+
