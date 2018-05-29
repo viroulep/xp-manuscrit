@@ -50,7 +50,7 @@ myplot = myplot + geom_density()
 myplot = myplot + scale_fill_discrete(name="Nombre de coeurs :")
 myplot = myplot + facet_wrap(~task_id, ncol=2)
 #myplot = myplot + ggtitle("Distribution of Cholesky's kernels duration")
-myplot = myplot + xlab("Performance (Gflops)")
+myplot = myplot + xlab("Performance (GFlops)")
 myplot = myplot + ylab("Densité")
 myplot = myplot + xlim(0, 20)
 print(myplot)
@@ -67,7 +67,7 @@ myplot = myplot + scale_fill_manual(name="Nombre de coeurs :", values=c("#f8766d
 #myplot = myplot + facet_wrap(~task_id, ncol=2)
 #myplot = myplot + ggtitle("Distribution of Cholesky's kernels duration")
 myplot = myplot + xlim(0, 20)
-myplot = myplot + xlab("Performance (Gflops)")
+myplot = myplot + xlab("Performance (GFlops)")
 myplot = myplot + ylab("Densité")
 
 print(myplot)
@@ -84,7 +84,7 @@ myplot = myplot + scale_fill_manual(name="Nombre de coeurs :", values=c("#f8766d
 #myplot = myplot + facet_wrap(~task_id, ncol=2)
 #myplot = myplot + ggtitle("Distribution of Cholesky's kernels duration")
 myplot = myplot + xlim(0, 20)
-myplot = myplot + xlab("Performance (Gflops)")
+myplot = myplot + xlab("Performance (GFlops)")
 myplot = myplot + ylab("Densité")
 
 print(myplot)
@@ -102,7 +102,7 @@ myplot = myplot + scale_fill_manual(name="Nombre de coeurs :", values=c("#f8766d
 #myplot = myplot + facet_wrap(~task_id, ncol=2)
 #myplot = myplot + ggtitle("Distribution of Cholesky's kernels duration")
 myplot = myplot + xlim(0, 20)
-myplot = myplot + xlab("Performance (Gflops)")
+myplot = myplot + xlab("Performance (GFlops)")
 myplot = myplot + ylab("Densité")
 
 print(myplot)
@@ -119,7 +119,7 @@ myplot = myplot + scale_fill_manual(name="Nombre de coeurs :", values=c("#f8766d
 #myplot = myplot + facet_wrap(~task_id, ncol=2)
 #myplot = myplot + ggtitle("Distribution of Cholesky's kernels duration")
 myplot = myplot + xlim(0, 20)
-myplot = myplot + xlab("Performance (Gflops)")
+myplot = myplot + xlab("Performance (GFlops)")
 myplot = myplot + ylab("Densité")
 
 print(myplot)
@@ -136,7 +136,7 @@ myplot = myplot + scale_fill_manual(name="Nombre de coeurs :", values=c("#f8766d
 #myplot = myplot + facet_wrap(~task_id, ncol=2)
 #myplot = myplot + ggtitle("Distribution of Cholesky's kernels duration")
 myplot = myplot + xlim(0, 20)
-myplot = myplot + xlab("Performance (Gflops)")
+myplot = myplot + xlab("Performance (GFlops)")
 myplot = myplot + ylab("Densité")
 
 print(myplot)
