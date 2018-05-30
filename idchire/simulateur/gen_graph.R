@@ -41,10 +41,13 @@ myplot = ggplot(df_affinity, aes(x=threads, y = gflops))
 myplot = myplot + geom_line(aes(colour=model, group=interaction(model, strat)), linetype = "longdash")
 myplot = myplot + geom_line(data=subset(df_runtime, runtime=="clang" | runtime=="libkomp"), aes(colour=runtime))
 myplot = myplot + geom_vline(mapping = NULL, data = NULL, xintercept = 64, color="red")
-myplot = myplot + guides(colour = guide_legend(override.aes = list(shape = NA)))
 #myplot = myplot + expand_limits(y=0)
 myplot = myplot + theme(legend.position=c(0.75, 0.25), text = element_text(size=16))
-myplot = myplot + scale_colour_manual(name="Modèle ou support exécutif", labels=c("libOMP", "DeuxNiveaux + Affinity", "Maximum", "Distant", "libKOMP"), values=c("#f8766d", "#a3a500", "#04c07f", "#01b0f6", "#e76bf3"))
+myplot = myplot + scale_colour_manual(
+                    name="Modèle ou support exécutif", labels=c("libOMP", "DeuxNiveaux + Affinity", "Maximum", "Distant", "libKOMP"),
+                    values=c("#f8766d", "#a3a500", "#04c07f", "#01b0f6", "#e76bf3"),
+                    guide = guide_legend(override.aes = list(linetype = c("solid", "dashed", "dashed", "dashed", "solid")))
+                  )
 #myplot = myplot + scale_shape_manual(name="Stratégie de vol", values=c(19, 4))
 #myplot = myplot + ggtitle("P d'un Cholesky (N=32768, BS=512) en fonction du modèle et strat.")
 myplot = myplot + ylab("Performance (GFlops)")
@@ -105,10 +108,13 @@ myplot = ggplot(df_affinity_avg, aes(x=threads, y = gflops))
 myplot = myplot + geom_line(aes(colour=interaction(model, strat), group=interaction(model, strat)), linetype="longdash")
 myplot = myplot + geom_vline(mapping = NULL, data = NULL, xintercept = 64, color="red")
 myplot = myplot + geom_line(data=subset(df_runtime_8k, runtime=="libkomp"), aes(colour=runtime))
-myplot = myplot + guides(colour = guide_legend(override.aes = list(shape = NA)))
 #myplot = myplot + expand_limits(y=0)
 myplot = myplot + theme(legend.position=c(0.75, 0.25), text = element_text(size=16))
-myplot = myplot + scale_colour_manual(name="Modèle ou support exécutif", labels=c("DeuxNiveaux/Affinity", "Maximum", "Distant", "libKOMP"), values=c("#a3a500", "#04c07f", "#01b0f6", "#e76bf3"))
+myplot = myplot + scale_colour_manual(
+                    name="Modèle ou support exécutif", labels=c("DeuxNiveaux + Affinity", "Maximum", "Distant", "libKOMP"),
+                    values=c("#a3a500", "#04c07f", "#01b0f6", "#e76bf3"),
+                    guide = guide_legend(override.aes = list(linetype = c("dashed", "dashed", "dashed", "solid")))
+                  )
 #myplot = myplot + scale_shape_manual(name="Stratégie de vol", values=c(19, 4))
 #myplot = myplot + ggtitle("P d'un Cholesky (N=32768, BS=512) en fonction du modèle et strat.")
 myplot = myplot + ylab("Performance (GFlops)")
@@ -131,7 +137,11 @@ myplot = myplot + guides(colour = guide_legend(override.aes = list(shape = NA)))
 #myplot = myplot + expand_limits(y=0)
 myplot = myplot + theme(legend.position=c(0.75, 0.25), text = element_text(size=16))
 #myplot = myplot + scale_colour_discrete(name="Modèle ou support exécutif")
-myplot = myplot + scale_colour_manual(name="Modèle ou support exécutif", labels=c("DeuxNiveaux/Affinity", "Maximum", "Coûts basés sur les chiffres réels", "libKOMP"), values=c("#a3a500", "#04c07f", "#01b0f6", "#e76bf3"))
+myplot = myplot + scale_colour_manual(
+                    name="Modèle ou support exécutif", labels=c("DeuxNiveaux + Affinity", "Maximum", "Coûts basés sur les chiffres réels", "libKOMP"),
+                    values=c("#a3a500", "#04c07f", "#01b0f6", "#e76bf3"),
+                    guide = guide_legend(override.aes = list(linetype = c("dashed", "dashed", "dashed", "solid")))
+                  )
 #myplot = myplot + scale_shape_manual(name="Stratégie de vol", values=c(19, 4))
 #myplot = myplot + ggtitle("P d'un Cholesky (N=32768, BS=512) en fonction du modèle et strat.")
 myplot = myplot + ylab("Performance (GFlops)")
